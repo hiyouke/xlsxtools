@@ -1,0 +1,8 @@
+#errcode#en#ch
+#错误码#英文名称#中文说明
+#int#string#string
+0#SUCESS#成功
+1#FAILED#错误
+2#UNKNOW_CMD#未知协议
+3#TIMEOUT#服务器内部超时
+4#DB_NO_DATA#DB中无数据
