@@ -34,5 +34,7 @@ xlsxtools游戏配置表工具，开源跨平台，支持多语言。Unity3D等�
 		a. xlsxtools/zip目录下,推荐openpyxl_1.7.0.zip
 		
 		b.执行sudo python setup.py install
+		
+	4.执行sh batch_trans.sh转换支持语言代码
 
 五、详细使用过程，参考README.docx		
