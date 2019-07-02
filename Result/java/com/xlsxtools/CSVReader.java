@@ -59,6 +59,17 @@ public class CSVReader {
 	}
 
 	private void load(String fileName, int startRow, int column, String split) throws IOException {
+		String separator = System.getProperty("line.separator");
+		String crlf = "\r\n";
+		String cr = "\r";
+		String lf = "\n";
+		int startRowReal = startRow;
+		if(separator.equalsIgnoreCase(crlf))
+		{
+			//修复 bufferedReader.readLine()) 按cr ,lf 分行的Bug
+			startRowReal = 2*startRow;
+		}
+			
 		BufferedReader bufferedReader = null;
 		try {
 			bufferedReader = new BufferedReader(new FileReader(fileName));
@@ -66,13 +77,16 @@ public class CSVReader {
 			int index = 0;
 			while ((stemp = bufferedReader.readLine()) != null) {
 				index++;
-				// 如果没有传入列数，则以文件的第一行分割作为列数
-				if (index <= startRow)
+				if (index <= startRowReal)
 					continue;
+				if(stemp.equalsIgnoreCase(cr) || stemp.equalsIgnoreCase(lf) ||  stemp.isEmpty())
+				{
+					continue;
+				}
+				// 如果没有传入列数，则以文件的第一行分割作为列数
 				if (column <= 0)
 					column = stemp.split(split).length;
 				list.add(getRow(stemp, split, column));
-
 			}
 			this.rowSize = list.size();
 			this.columnSize = list.get(0).length;

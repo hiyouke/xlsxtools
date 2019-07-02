@@ -24,6 +24,7 @@ python java_mgr_gen.py
 
 echo "copy csharp CSVReader"
 cp ./CSVReader_cs/CSVReader.cs ./Result/cs/CSVReader.cs
+cp ./CSVReader_cs/CSVUtility.cs ./Result/cs/CSVUtility.cs
 
 echo "copy java CSVReader"
 cp ./CSVReader_Java/com/xlsxtools/CSVReader.java ./Result/java/com/xlsxtools/CSVReader.java
