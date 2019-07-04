@@ -37,8 +37,8 @@ public class ItemItemConfigTable
 	}
 
 	public void load() throws IOException
-	{		//ClassLoader loader =  this.getClass().getClassLoader();
-		//String path = loader.getResource("Config/Item_Item.txt").getPath();		String path = this.getClass().getResource("/Config/Item_Item.txt").getPath();
+	{
+		String path = this.getClass().getClassLoader().getResource("Config/Item_Item.txt").getPath();
 		CSVReader reader = new CSVReader(path, 3, "#");
 		while (reader.next()) {
 			int index = 0;
