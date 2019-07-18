@@ -3,10 +3,8 @@
 
 #include "stdafx.h"
 #include "CSVReader.h"
-#include <iostream>
 #include <stdlib.h>
 
-using namespace std;
 
 int main()
 {
@@ -15,7 +13,7 @@ int main()
 	CSVReader reader = CSVReader();
 	reader.LoadText("Msg_Errcode.txt",3);
 
-	cout << u8"按任意键退出！" << endl;
+	printf(u8"按任意键退出！");
 	getchar();
 
     return 0;
