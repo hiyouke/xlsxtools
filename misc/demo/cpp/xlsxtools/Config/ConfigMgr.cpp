@@ -29,4 +29,6 @@ ConfigMgr * ConfigMgr::GetInstance()
 void ConfigMgr::Init()
 {
 	MsgErrcode.Load();
+
+	MsgMsg.Load();
 }

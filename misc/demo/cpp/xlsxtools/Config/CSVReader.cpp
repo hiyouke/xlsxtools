@@ -18,7 +18,7 @@ bool CSVReader::LoadText(string textfileName, int skipLine)
 	fopen_s(&fp, textfileName.c_str(), "r");
 
 	if (fp == NULL) {
-		printf("can not load file!");
+		printf("can not load file : %s\n",textfileName.c_str());
 		return false;
 	}
 	int lineCount = 1;
@@ -26,7 +26,7 @@ bool CSVReader::LoadText(string textfileName, int skipLine)
 	{
 		char lineContent[1024] = { 0 };
 		fgets(lineContent, 1024, fp);
-		if (lineCount > skipLine)
+		if (lineCount > skipLine && strlen(lineContent) > 0)
 		{
 			ParseLine(lineContent);
 		}

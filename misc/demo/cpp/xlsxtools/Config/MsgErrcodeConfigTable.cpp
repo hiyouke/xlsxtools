@@ -34,10 +34,8 @@ bool MsgErrcodeConfigTable::ConfigProcess(vector<string> fields, MsgErrcodeConfi
 	}
 
 	int idx = 0;
-	rec.errcode = stoi(fields[idx]);//错误码
-	idx++;
-	rec.en = fields[idx];	//英文名称
-	idx++;
+	rec.errcode = stoi(fields[idx++]);//错误码
+	rec.en = fields[idx++];	//英文名称
 	rec.ch = fields[idx++];	//中文说明
 
 	return true;

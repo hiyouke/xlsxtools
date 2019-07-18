@@ -1,5 +1,6 @@
 #pragma once
 #include "MsgErrcodeConfigTable.h"
+#include "MsgMsgConfigTable.h"
 
 class MsgErrcodeConfigTable;
 
@@ -17,5 +18,7 @@ public:
 
 public:
 	MsgErrcodeConfigTable MsgErrcode;
+
+	MsgMsgConfigTable MsgMsg;
 };
 

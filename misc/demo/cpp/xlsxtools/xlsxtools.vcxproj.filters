@@ -36,6 +36,9 @@
     <ClInclude Include="Config\MsgErrcodeConfigTable.h">
       <Filter>Config</Filter>
     </ClInclude>
+    <ClInclude Include="Config\MsgMsgConfigTable.h">
+      <Filter>Config</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -51,6 +54,9 @@
       <Filter>Config</Filter>
     </ClCompile>
     <ClCompile Include="Config\MsgErrcodeConfigTable.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\MsgMsgConfigTable.cpp">
       <Filter>Config</Filter>
     </ClCompile>
   </ItemGroup>

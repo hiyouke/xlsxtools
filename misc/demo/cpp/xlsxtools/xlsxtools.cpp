@@ -13,19 +13,23 @@ int main()
 {
 	system("CHCP 65001");
 
+	printf(u8"\r\n");
 
-	//CSVReader reader = CSVReader();
-	//reader.LoadText("Msg_Errcode.txt",3);
-
-
-	map<int, MsgErrcodeConfig> configs = ConfigMgr::GetInstance()->MsgErrcode.GetConfigs();
-	for(map<int, MsgErrcodeConfig>::iterator item = configs.begin();item != configs.end();item++)
+	map<int, MsgErrcodeConfig> configs1 = ConfigMgr::GetInstance()->MsgErrcode.GetConfigs();
+	for(map<int, MsgErrcodeConfig>::iterator item = configs1.begin();item != configs1.end();item++)
 	{
-		printf("key : %d value : %s\r", item->first,item->second.ch.c_str());
+		printf("MsgErrcodeConfig key : %d value : %s\r", item->first,item->second.ch.c_str());
 	}
 
+	printf(u8"\r\n");
 
-	printf(u8"按任意键退出！");
+	map<int, MsgMsgConfig> configs2 = ConfigMgr::GetInstance()->MsgMsg.GetConfigs();
+	for (map<int, MsgMsgConfig>::iterator item = configs2.begin(); item != configs2.end(); item++)
+	{
+		printf("MsgMsgConfig key : %d value : %s\r\n", item->first,item->second.content.c_str());
+	}
+	
+	printf(u8"\n按任意键退出！");
 	getchar();
 
     return 0;
