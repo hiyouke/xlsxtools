@@ -1,11 +1,10 @@
 #!/usr/bin/python
 # coding=utf-8
 
-import types
 import sys
-import re 
 import os
 from openpyxl import load_workbook
+from xlsx_to_txt import get_cell_value
 
 filename = sys.argv[1].strip()
 path_split = filename.split("/")
@@ -17,10 +16,6 @@ resultPath = "./Result/cs/"
 if not os.path.isdir(resultPath):
     os.makedirs(resultPath)
 
-configPath = "./Config"
-if not os.path.isdir(configPath):
-    os.makedirs(configPath)
-
 wb = load_workbook(filename)
 sheet_names = wb.get_sheet_names()
 listSheet = wb.get_sheet_by_name(name=sheet_names[0]) #读第一个sheet
@@ -28,13 +23,7 @@ col = listSheet.get_highest_column()
 row = listSheet.get_highest_row()
 for i in range(row):
     cell = listSheet.cell(column=0,row=i)
-    v_type = type(cell.value)
-    if v_type is types.UnicodeType :
-        value = cell.value.encode('utf-8')
-    elif v_type is types.NoneType :
-        value = ''
-    else :
-        value = str(cell.value)
+    value = get_cell_value(cell)
     sheet_name = value.capitalize()
     dataSheet = wb.get_sheet_by_name(value)
     data_col = dataSheet.get_highest_column()
@@ -45,30 +34,17 @@ for i in range(row):
     struct_name = []    #变量名
     struct_type = []    #变量类型 
     struct_desc = []    #变量注释
-    rcs_path = configPath+"/"+excel_name+"_"+sheet_name+".txt"  #资源路径
-    rcs_file = open(rcs_path,"w")
     for r in range(data_row):
-        out = ""
         for c in range(data_col):
             data_cell = dataSheet.cell(column=c,row=r)
-            data_type = type(data_cell.value)
-            if data_type is types.UnicodeType :
-                data_value = data_cell.value.encode('utf-8')
-            elif data_type is types.NoneType :
-                data_value = ''
-            else :
-                data_value = str(data_cell.value)
-            if c != 0 or (c == 0 and data_cell.data_type == "s" ) :
-                out += "#"
-            out += data_value
+            data_value = get_cell_value(data_cell)
             if r == 0:
                 struct_name.append(data_value)
             if r == 1:
                 struct_desc.append(data_value)
             if r == 2:
                 struct_type.append(data_value)
-        rcs_file.write(out+os.linesep)
-    rcs_file.close()
+
     #====================================================================
     #输出成员变量，同时记录是否数组或者结构体
     config_name = excel_name+sheet_name+"Config"

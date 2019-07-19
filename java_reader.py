@@ -1,19 +1,16 @@
 #!/usr/bin/python
 # coding=utf-8
+
 import sys
-import re 
-import types
 import os
 from openpyxl import load_workbook
+from xlsx_to_txt import get_cell_value
 
 filename = sys.argv[1].strip()
-#filename = './evolution_plants.xlsx'
-# filename = './card.xlsx'
 path_split = filename.split("/")
 name_split = path_split[len(path_split)-1].split(".")
 excel_name = name_split[0]
 excel_name = excel_name.capitalize()
-# print(filename1)
 
 resultPath = "./Result/java/com/xlsxtools"
 if not os.path.isdir(resultPath):
@@ -26,39 +23,20 @@ col = listSheet.get_highest_column()
 row = listSheet.get_highest_row()
 for i in range(row):
     cell = listSheet.cell(column=0,row=i)
-    v_type = type(cell.value)
-    if v_type is types.UnicodeType :
-        value = cell.value.encode('utf-8')
-    elif v_type is types.NoneType :
-        value = ''
-    else :
-        value = str(cell.value)
+    value = get_cell_value(cell)
     sheet_name = value.capitalize()
     dataSheet = wb.get_sheet_by_name(value)
     data_col = dataSheet.get_highest_column()
     data_row = dataSheet.get_highest_row()
-    
-
 
     struct_name = []
     struct_type = []
     struct_desc = []
-    rcs_path = "./Config/"+excel_name+"_"+sheet_name+".txt"
-    rcs_file = open(rcs_path,"w")
     for r in range(data_row):
         out = ""
         for c in range(data_col):
             data_cell = dataSheet.cell(column=c,row=r)
-            data_type = type(data_cell.value)
-            if data_type is types.UnicodeType :
-                data_value = data_cell.value.encode('utf-8')
-            elif data_type is types.NoneType :
-                data_value = ''
-            else :
-                data_value = str(data_cell.value)
-            if c != 0 or (c == 0 and data_cell.data_type == "s" ) :
-                out += "#"
-            out += data_value
+            data_value = get_cell_value(data_cell)
             if r == 0:
                 struct_name.append(data_value)
             if r == 1:
@@ -67,10 +45,9 @@ for i in range(row):
                 if data_value == "string":
                     data_value = "String"
                 struct_type.append(data_value)
-        rcs_file.write(out+""+os.linesep+"")
-    rcs_file.close()
 
-
+    #====================================================================
+    #输出成员变量，同时记录是否数组或者结构体
     config_name = excel_name+sheet_name+"Config"
     out_path = resultPath+"/"+excel_name+sheet_name+"ConfigTable.java"
     out_file = open(out_path,"w")
@@ -140,7 +117,6 @@ for i in range(row):
         out_file.write("\t}"+os.linesep+"")
     out_file.write("\t"+os.linesep+"")
 
-    
     out_file.write("\tprivate Map<Integer, "+config_name+"> m_configs = new HashMap<Integer,"+config_name+">();"+os.linesep+"")
     out_file.write("\tpublic Map<Integer, "+config_name+"> getConfigs()"+os.linesep+"\t{"+os.linesep+"\t\treturn m_configs;"+os.linesep+"\t}"+os.linesep+""+os.linesep+"")
     out_file.write("\tpublic void load() throws IOException"+os.linesep+"\t{"+os.linesep+"")
