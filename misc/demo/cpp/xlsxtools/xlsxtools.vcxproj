@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="Config\ConfigMgr.h" />
     <ClInclude Include="Config\CSVReader.h" />
+    <ClInclude Include="Config\ItemItemConfigTable.h" />
     <ClInclude Include="Config\MsgErrcodeConfigTable.h" />
     <ClInclude Include="Config\MsgMsgConfigTable.h" />
     <ClInclude Include="stdafx.h" />
@@ -155,6 +156,7 @@
   <ItemGroup>
     <ClCompile Include="Config\ConfigMgr.cpp" />
     <ClCompile Include="Config\CSVReader.cpp" />
+    <ClCompile Include="Config\ItemItemConfigTable.cpp" />
     <ClCompile Include="Config\MsgErrcodeConfigTable.cpp" />
     <ClCompile Include="Config\MsgMsgConfigTable.cpp" />
     <ClCompile Include="stdafx.cpp">

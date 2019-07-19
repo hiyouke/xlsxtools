@@ -15,6 +15,15 @@ int main()
 
 	printf(u8"\r\n");
 
+	map<int, ItemItemConfig> configs0 = ConfigMgr::GetInstance()->ItemItem.GetConfigs();
+	printf("ItemItemConfig size : %d\r",configs0.size());
+	for (map<int, ItemItemConfig>::iterator item0 = configs0.begin(); item0 != configs0.end(); item0++)
+	{
+		printf("ItemItemConfig id : %d name : %s\r", item0->first, item0->second.name.c_str());
+	}
+	printf(u8"\r\n");
+
+	/*
 	map<int, MsgErrcodeConfig> configs1 = ConfigMgr::GetInstance()->MsgErrcode.GetConfigs();
 	for(map<int, MsgErrcodeConfig>::iterator item = configs1.begin();item != configs1.end();item++)
 	{
@@ -28,7 +37,8 @@ int main()
 	{
 		printf("MsgMsgConfig key : %d value : %s\r\n", item->first,item->second.content.c_str());
 	}
-	
+	*/
+
 	printf(u8"\n按任意键退出！");
 	getchar();
 
