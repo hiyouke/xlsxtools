@@ -30,7 +30,7 @@ void ConfigMgr::Init()
 {
 	ItemItem.Load();
 
-	//MsgErrcode.Load();
+	MsgErrcode.Load();
 
-	//MsgMsg.Load();
+	MsgMsg.Load();
 }
