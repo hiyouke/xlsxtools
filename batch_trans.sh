@@ -24,6 +24,10 @@ do
     echo "cpp reader"
     echo -e "python $runpath/cpp_reader.py $filename\n------------------\n"
     python $runpath/cpp_reader.py $filename
+
+    echo "oc reader"
+    echo -e "python $runpath/oc_reader.py $filename\n------------------\n"
+    python $runpath/oc_reader.py $filename
 done
 
 
@@ -43,3 +47,6 @@ python cpp_mgr_gen.py
 echo -e "\n------copy cpp CSVReader------"
 cp ./CSVReader_cpp/CSVReader.h ./Result/cpp/CSVReader.h
 cp ./CSVReader_cpp/CSVReader.cpp ./Result/cpp/CSVReader.cpp
+
+echo -e "\n------oc manager------"
+python oc_mgr_gen.py

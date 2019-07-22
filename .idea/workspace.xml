@@ -3,37 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="696fd4f2-bcf2-4c2b-b834-b4cfa32ce4da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Msg_Errcode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Msg_Errcode.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/cs/MsgErrcodeConfigTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Result/cs/MsgErrcodeConfigTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/java/com/xlsxtools/MsgErrcodeConfigTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Result/java/com/xlsxtools/MsgErrcodeConfigTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch_trans.sh" beforeDir="false" afterPath="$PROJECT_DIR$/batch_trans.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ConfigMgr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ConfigMgr.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ConfigMgr.h" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ConfigMgr.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ItemItemConfigTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ItemItemConfigTable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ItemItemConfigTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/ItemItemConfigTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgErrcodeConfigTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgErrcodeConfigTable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgErrcodeConfigTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgErrcodeConfigTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgMsgConfigTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgMsgConfigTable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgMsgConfigTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Config/MsgMsgConfigTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/CSVReader.obj" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/CSVReader.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/ConfigMgr.obj" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/ConfigMgr.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/ItemItemConfigTable.obj" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/ItemItemConfigTable.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/MsgErrcodeConfigTable.obj" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/MsgErrcodeConfigTable.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/MsgMsgConfigTable.obj" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/MsgMsgConfigTable.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/stdafx.obj" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/stdafx.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/vc140.idb" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/vc140.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.exe" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.log" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.obj" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.pch" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.pch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/Debug/xlsxtools.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/xlsxtools.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/xlsxtools.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlsx/msg.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/xlsx/msg.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_reader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,44 +17,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/batch_trans.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cpp_mgr_gen.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="206">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cpp_reader.py">
+        <entry file="file://$PROJECT_DIR$/oc_mgr_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+            <state relative-caret-position="151">
+              <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
               <folding>
-                <element signature="e#34#44#0" expanded="true" />
-                <element signature="e#244#2747#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cs_reader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="143" column="85" lean-forward="true" selection-start-line="143" selection-start-column="67" selection-end-line="143" selection-end-column="85" />
-              <folding>
-                <element signature="e#34#44#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,6 +67,8 @@
       <find>print</find>
       <find>get_type_str</find>
       <find>push_back</find>
+      <find>cppo</find>
+      <find>cpp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,9 +81,11 @@
         <option value="$PROJECT_DIR$/cs_reader.py" />
         <option value="$PROJECT_DIR$/java_reader.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/cpp_reader.py" />
+        <option value="$PROJECT_DIR$/oc_reader.py" />
         <option value="$PROJECT_DIR$/batch_trans.sh" />
         <option value="$PROJECT_DIR$/cpp_mgr_gen.py" />
-        <option value="$PROJECT_DIR$/cpp_reader.py" />
+        <option value="$PROJECT_DIR$/oc_mgr_gen.py" />
       </list>
     </option>
   </component>
@@ -315,40 +265,57 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/batch_trans.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cs_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="143" column="85" lean-forward="true" selection-start-line="143" selection-start-column="67" selection-end-line="143" selection-end-column="85" />
+          <caret line="143" column="85" selection-start-line="143" selection-start-column="67" selection-end-line="143" selection-end-column="85" />
           <folding>
             <element signature="e#34#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp_mgr_gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+        <state relative-caret-position="450">
+          <caret line="110" column="30" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
           <folding>
             <element signature="e#34#44#0" expanded="true" />
             <element signature="e#244#2747#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oc_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="252" selection-start-line="252" selection-end-line="252" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp_mgr_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/batch_trans.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oc_mgr_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

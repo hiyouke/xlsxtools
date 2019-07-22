@@ -226,9 +226,6 @@ for i in range(row):
     class_member_names = []
     class_member_descs = []
     class_member_types = []
-    rcs_path = config_path + "/" + excel_name + "_" + sheet_name + ".txt" # 资源路径
-    rcs_file = open(rcs_path, "w")
-    out_string = ""
     for r in range(data_row):
         for c in range(data_col):
             data_cell = data_sheet.cell(column = c, row = r)
@@ -239,18 +236,12 @@ for i in range(row):
                 data_cell_value = ''
             else:
                 data_cell_value = str(data_cell.value)
-            if c != 0 or (c == 0 and data_cell.data_type == "s"):
-                out_string += "#"
-            out_string += data_cell_value
             if r == 0:
                 class_member_names.append(data_cell_value)
             if r == 1:
                 class_member_descs.append(data_cell_value)
             if r == 2:
                 class_member_types.append(data_cell_value)
-        out_string += ""+os.linesep+""
-    rcs_file.write(out_string)
-    rcs_file.close()
 
     # ====================================================================
     # 构造类结构体
