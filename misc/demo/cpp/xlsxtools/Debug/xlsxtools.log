@@ -1,3 +1,20 @@
-﻿  ConfigMgr.cpp
+﻿  MsgMsgConfigTable.cpp
+  MsgErrcodeConfigTable.cpp
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\msgerrcodeconfigtable.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\msgerrcodeconfigtable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  ItemItemConfigTable.cpp
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\itemitemconfigtable.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\itemitemconfigtable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  ConfigMgr.cpp
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\itemitemconfigtable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\msgerrcodeconfigtable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  CSVReader.cpp
+  正在生成代码...
+  正在编译...
+  xlsxtools.cpp
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\itemitemconfigtable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\config\msgerrcodeconfigtable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  LINK : 没有找到 D:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\Debug\xlsxtools.exe 或上一个增量链接没有生成它；正在执行完全链接
   xlsxtools.vcxproj -> D:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\Debug\xlsxtools.exe
   xlsxtools.vcxproj -> D:\git_projects\xlsxtools\misc\demo\cpp\xlsxtools\Debug\xlsxtools.pdb (Full PDB)

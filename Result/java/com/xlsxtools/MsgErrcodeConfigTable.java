@@ -7,7 +7,7 @@ public class MsgErrcodeConfigTable
 {
 	public class MsgErrcodeConfig
 	{
-		public	int		errcode;	//错误码
+		public	int		id;	//错误码
 		public	String		en;	//英文名称
 		public	String		ch;	//中文说明
 	}
@@ -26,10 +26,10 @@ public class MsgErrcodeConfigTable
 			int index = 0;
 			MsgErrcodeConfig rec = new MsgErrcodeConfig();
 
-			rec.errcode = reader.getInt(index++);	//错误码
+			rec.id = reader.getInt(index++);	//错误码
 			rec.en = reader.getString(index++);	//英文名称
 			rec.ch = reader.getString(index++);	//中文说明
-			m_configs.put(rec.errcode, rec);
+			m_configs.put(rec.id, rec);
 		}
 	}
 }

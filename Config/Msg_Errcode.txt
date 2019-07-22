@@ -1,4 +1,4 @@
-errcode#en#ch
+id#en#ch
 错误码#英文名称#中文说明
 int#string#string
 0#SUCESS#成功了

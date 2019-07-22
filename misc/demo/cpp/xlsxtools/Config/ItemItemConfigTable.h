@@ -5,48 +5,40 @@
 
 using namespace std;
 
-
-struct ItemItemSellConfig
-{
-	 int	id;	//³öÊÛ»ñµÃÎïÆ·1
-	 int	num;	//³öÊÛ»ñµÃÎïÆ·ÊıÁ¿1
+struct ItemItemSellConfig
+{
+	int	id;	//å‡ºå”®è·å¾—ç‰©å“1
+	int	num;	//å‡ºå”®è·å¾—ç‰©å“æ•°é‡1
 };
 
-struct ItemItemConfig
-{
-		int	id;	//id
-		string	name;	//Ãû³Æ
-		string	desc;	//ÃèÊö
-		string	gain;	//»ñÈ¡Í¾¾¶
-		int	type;	//ÀàĞÍ
-		int	overlap;	//µş¼ÓÉÏÏŞ
-		int	usetype;	//Ê¹ÓÃĞ§¹ûÀàĞÍ
-		vector<int>	usevalue;	//Ê¹ÓÃĞ§¹ûÖµ2
-		int	use_times;	//Ê¹ÓÃ´ÎÊıÏŞÖÆ
-		int	cansell;	//ÊÇ·ñ¿É³öÊÛ
-		vector<ItemItemSellConfig>	sell;
-		string	head;	//Ğ¡Í¼±ê
-		string	model;	//Ä£ĞÍ
-		int	star;	//ĞÇ¼¶
-		int	linkid;	//¹ØÁªid
-};
-
+
+struct ItemItemConfig
+{
+	int id;//id
+	string name;//åç§°
+	string desc;//æè¿°
+	string gain;//è·å–é€”å¾„
+	int type;//ç±»å‹
+	int overlap;//å åŠ ä¸Šé™
+	int usetype;//ä½¿ç”¨æ•ˆæœç±»å‹
+	vector<int> usevalue;//ä½¿ç”¨æ•ˆæœå€¼2
+	int use_times;//ä½¿ç”¨æ¬¡æ•°é™åˆ¶
+	int cansell;//æ˜¯å¦å¯å‡ºå”®
+	vector<ItemItemSellConfig> sell;
+	string head;//å°å›¾æ ‡
+	string model;//æ¨¡å‹
+	int star;//æ˜Ÿçº§
+	int linkid;//å…³è”id
+};
 
 class ItemItemConfigTable
 {
-public:
-	ItemItemConfigTable();
-	~ItemItemConfigTable();
-
-public:
-	map<int, ItemItemConfig> & GetConfigs();
-	ItemItemConfig * GetConfigById(int cid);
-
-	bool ConfigProcess(vector<string> fields, ItemItemConfig & rec);
-
-	void Load();
-
 private:
 	map<int, ItemItemConfig> m_configs;
-};
+public:
+	map<int, ItemItemConfig> & GetConfigs();
+	ItemItemConfig GetConfigById(int cid);
+	void Load();
 
+	bool ConfigProcess(vector<string> fields, ItemItemConfig & rec);
+};

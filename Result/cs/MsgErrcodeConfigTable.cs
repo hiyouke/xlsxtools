@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class MsgErrcodeConfig
 {
-	public	int	errcode;	//错误码
+	public	int	id;	//错误码
 	public	string	en;	//英文名称
 	public	string	ch;	//中文说明
 }
@@ -35,7 +35,7 @@ public class MsgErrcodeConfigTable
 		RowHelper rh = new RowHelper(row);
 		MsgErrcodeConfig rec = new MsgErrcodeConfig();
 
-		rec.errcode = CSVUtility.ToInt(rh.Read());	//错误码
+		rec.id = CSVUtility.ToInt(rh.Read());	//错误码
 		rec.en = rh.Read();	//英文名称
 		rec.ch = rh.Read();	//中文说明
 		return rec;
@@ -50,7 +50,7 @@ public class MsgErrcodeConfigTable
 		{
 			string[] row = reader.GetRow(r);
 			MsgErrcodeConfig ac = ConfigProcess(row) as MsgErrcodeConfig;
-			configs.Add(ac.errcode, ac);
+			configs.Add(ac.id, ac);
 		}
 	}
 }
