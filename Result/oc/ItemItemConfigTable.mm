@@ -44,8 +44,7 @@
 
     for (int i = 0; i < 2; ++i) 
     {
-        newInstance.m_sells.push_back(ItemItemSellConfig());
-        newInstance.m_sells[i] = [ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]];
+        newInstance.m_sells.push_back([ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
         index += 2;
     }
 	newInstance.m_head = rows[index++];

@@ -18,17 +18,21 @@
 	int index = 0;
 	MsgMsgConfig* newInstance = [[MsgMsgConfig alloc] init];
 
-	newInstance.m_id = [rows[index++] intValue];
-	newInstance.m_title = rows[index++];
-	newInstance.m_content = rows[index++];
-	for (int i = 0; i < 3; ++i) {
-		newInstance.m_sells[i] = [MsgMsgSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]];
-		index += 2;
-	}
-	for (int i = 0; i < 4; ++i) {
-		newInstance.m_instance[i] = [rows[index++] intValue];
-	}
-	newInstance.m_remark = rows[index++];
+	newInstance.m_id = [rows[index++] intValue];
+	newInstance.m_title = rows[index++];
+	newInstance.m_content = rows[index++];
+
+    for (int i = 0; i < 3; ++i) 
+    {
+        newInstance.m_sells.push_back([MsgMsgSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
+        index += 2;
+    }
+
+    for (int i = 0; i < 4; ++i) 
+    {
+        newInstance.m_instance.push_back([rows[index++] intValue]);
+    }
+	newInstance.m_remark = rows[index++];
 
 	return newInstance;
 }
@@ -49,8 +53,8 @@
 	int index = 0;
 	MsgMsgSellConfig* newInstance = [[MsgMsgSellConfig alloc] init];
 
-	newInstance.m_num = [rows[index++] intValue];
-	newInstance.m_id = [rows[index++] intValue];
+	newInstance.m_num = [rows[index++] intValue];
+	newInstance.m_id = [rows[index++] intValue];
 
 	return newInstance;
 }

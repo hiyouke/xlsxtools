@@ -37,7 +37,7 @@ head_mgr_file.write('};')
 mgr_path = "./Result/oc/ConfigMgr.mm"
 mgr_file = open(mgr_path, 'w')
 # import headers
-mgr_file.write('''#include "stdafx.h"
+mgr_file.write('''
 #include "ConfigMgr.h"
 
 static ConfigMgr * mInstance = NULL;

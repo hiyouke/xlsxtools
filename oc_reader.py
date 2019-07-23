@@ -166,14 +166,12 @@ def writeMMSource(result_path, class_list, normal_type_map, excel_name, sheet_na
     }\n''' % (class_member.count, class_member.name, get_type_str(class_member.type))
                 else:
                     member_class = findClassWithName(class_list, class_member.type)
-                    print("member_class : " + member_class.name)
                     out_string += '''
     for (int i = 0; i < %d; ++i) 
     {
-        newInstance.%s.push_back(%s());
-        newInstance.%s[i] = [%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]];
+        newInstance.%s.push_back([%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]]);
         index += %d;
-    }\n''' % (class_member.count, class_member.name, member_class.name,class_member.name, member_class.name, member_class.init_count, member_class.init_count)
+    }\n''' % (class_member.count, class_member.name, member_class.name, member_class.init_count, member_class.init_count)
             else:
                 out_string += "\tnewInstance.%s = %s;\n" % (class_member.name, get_type_str(class_member.type))
         out_string += ""+os.linesep+"\treturn newInstance;"+os.linesep+"}"+os.linesep+""

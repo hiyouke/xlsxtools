@@ -15,9 +15,9 @@
 	int index = 0;
 	MsgErrcodeConfig* newInstance = [[MsgErrcodeConfig alloc] init];
 
-	newInstance.m_id = [rows[index++] intValue];
-	newInstance.m_en = rows[index++];
-	newInstance.m_ch = rows[index++];
+	newInstance.m_id = [rows[index++] intValue];
+	newInstance.m_en = rows[index++];
+	newInstance.m_ch = rows[index++];
 
 	return newInstance;
 }

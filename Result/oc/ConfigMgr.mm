@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "ConfigMgr.h"
 
 static ConfigMgr * mInstance = NULL;
