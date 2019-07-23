@@ -18,7 +18,7 @@
 @synthesize m_star;
 @synthesize m_linkid;
 
-(ItemItemConfig*)ConfigProcess:(NSArray*)rows
++(ItemItemConfig*)ConfigProcess:(NSArray*)rows
 {
 	if (rows.count != 19) {
 		return nil;
@@ -58,7 +58,7 @@
 @synthesize m_num;
 @synthesize m_id;
 
-(ItemItemSellConfig*)ConfigProcess:(NSArray*)rows
++(ItemItemSellConfig*)ConfigProcess:(NSArray*)rows
 {
 	if (rows.count != 2) {
 		return nil;

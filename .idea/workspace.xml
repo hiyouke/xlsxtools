@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="696fd4f2-bcf2-4c2b-b834-b4cfa32ce4da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch_trans.sh" beforeDir="false" afterPath="$PROJECT_DIR$/batch_trans.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/xlsxtools.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/misc/demo/cpp/xlsxtools/xlsxtools.VC.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oc_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_reader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,20 +17,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/batch_trans.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="960">
               <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oc_mgr_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            <state relative-caret-position="543">
+              <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oc_reader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="146" column="39" lean-forward="true" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -69,6 +78,7 @@
       <find>push_back</find>
       <find>cppo</find>
       <find>cpp</find>
+      <find>ConfigProcess</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -82,10 +92,10 @@
         <option value="$PROJECT_DIR$/java_reader.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/cpp_reader.py" />
-        <option value="$PROJECT_DIR$/oc_reader.py" />
         <option value="$PROJECT_DIR$/batch_trans.sh" />
         <option value="$PROJECT_DIR$/cpp_mgr_gen.py" />
         <option value="$PROJECT_DIR$/oc_mgr_gen.py" />
+        <option value="$PROJECT_DIR$/oc_reader.py" />
       </list>
     </option>
   </component>
@@ -262,9 +272,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="file://$PROJECT_DIR$/cs_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -286,13 +294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oc_reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="252" selection-start-line="252" selection-end-line="252" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cpp_mgr_gen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -305,18 +306,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/batch_trans.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="960">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oc_mgr_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        <state relative-caret-position="543">
+          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oc_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="146" column="39" lean-forward="true" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
         </state>
       </provider>
     </entry>

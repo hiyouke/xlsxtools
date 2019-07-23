@@ -9,7 +9,7 @@
 @synthesize m_instance;
 @synthesize m_remark;
 
-(MsgMsgConfig*)ConfigProcess:(NSArray*)rows
++(MsgMsgConfig*)ConfigProcess:(NSArray*)rows
 {
 	if (rows.count != 14) {
 		return nil;
@@ -40,7 +40,7 @@
 @synthesize m_num;
 @synthesize m_id;
 
-(MsgMsgSellConfig*)ConfigProcess:(NSArray*)rows
++(MsgMsgSellConfig*)ConfigProcess:(NSArray*)rows
 {
 	if (rows.count != 2) {
 		return nil;

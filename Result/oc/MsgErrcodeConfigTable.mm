@@ -6,7 +6,7 @@
 @synthesize m_en;
 @synthesize m_ch;
 
-(MsgErrcodeConfig*)ConfigProcess:(NSArray*)rows
++(MsgErrcodeConfig*)ConfigProcess:(NSArray*)rows
 {
 	if (rows.count != 3) {
 		return nil;

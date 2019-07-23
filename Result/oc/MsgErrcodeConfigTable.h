@@ -10,7 +10,7 @@ using namespace std;
 @property (nonatomic) NSString* m_en;
 @property (nonatomic) NSString* m_ch;
 
-(MsgErrcodeConfig*)ConfigProcess:(NSArray*)rows;
++(MsgErrcodeConfig*)ConfigProcess:(NSArray*)rows;
 
 @end
 

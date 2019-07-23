@@ -119,7 +119,7 @@ def writeHeader(class_list, sheet_name):
                     class_member.name)
                 out_string += os.linesep
         out_string += os.linesep
-        out_string += "(%s*)ConfigProcess:(NSArray*)rows;"%curr_class.name
+        out_string += "+(%s*)ConfigProcess:(NSArray*)rows;"%curr_class.name
         out_string += os.linesep
         out_string += ""+os.linesep+"@end"+os.linesep+""
     # table定义
@@ -142,7 +142,7 @@ def writeMMSource(class_list, sheet_name):
             out_string += "@synthesize " + class_member.name + ";"+os.linesep+""
         # 构造方法
         out_string += os.linesep
-        out_string += "(%s*)ConfigProcess:(NSArray*)rows"%curr_class.name
+        out_string += "+(%s*)ConfigProcess:(NSArray*)rows"%curr_class.name
         out_string += os.linesep
         out_string += "{"+os.linesep+""
         out_string += "\tif (rows.count != %d) {"%curr_class.init_count

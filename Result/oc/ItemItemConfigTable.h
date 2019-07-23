@@ -23,7 +23,7 @@ using namespace std;
 @property (nonatomic) int m_star;
 @property (nonatomic) int m_linkid;
 
-(ItemItemConfig*)ConfigProcess:(NSArray*)rows;
++(ItemItemConfig*)ConfigProcess:(NSArray*)rows;
 
 @end
 
@@ -32,7 +32,7 @@ using namespace std;
 @property (nonatomic) int m_num;
 @property (nonatomic) int m_id;
 
-(ItemItemSellConfig*)ConfigProcess:(NSArray*)rows;
++(ItemItemSellConfig*)ConfigProcess:(NSArray*)rows;
 
 @end
 

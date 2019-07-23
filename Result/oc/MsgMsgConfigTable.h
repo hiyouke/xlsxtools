@@ -14,7 +14,7 @@ using namespace std;
 @property (nonatomic) vector<int> m_instance; // count: 4
 @property (nonatomic) NSString* m_remark;
 
-(MsgMsgConfig*)ConfigProcess:(NSArray*)rows;
++(MsgMsgConfig*)ConfigProcess:(NSArray*)rows;
 
 @end
 
@@ -23,7 +23,7 @@ using namespace std;
 @property (nonatomic) int m_num;
 @property (nonatomic) int m_id;
 
-(MsgMsgSellConfig*)ConfigProcess:(NSArray*)rows;
++(MsgMsgSellConfig*)ConfigProcess:(NSArray*)rows;
 
 @end
 
