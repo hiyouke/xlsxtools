@@ -24,7 +24,7 @@
 
 @end
 
-@implementation MsgMsgConfigTable
+@implementation MsgErrcodeConfigTable
 
 + (NSDictionary*)configs
 {

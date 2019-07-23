@@ -14,7 +14,7 @@ using namespace std;
 
 @end
 
-@interface MsgMsgConfigTable : NSObject
+@interface MsgErrcodeConfigTable : NSObject
 
 + (NSDictionary*)configs;
 
