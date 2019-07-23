@@ -31,7 +31,7 @@ public:
 
 public:\n''')
 for i in range(len(class_names)):
-    head_mgr_file.write('\t%sConfigTable %s;\n' % (class_names[i], class_names[i]))
+    head_mgr_file.write('\tNSDictionary *  %s;\n' % (class_names[i]))
 head_mgr_file.write('};')
 
 mgr_path = "./Result/oc/ConfigMgr.mm"
@@ -65,5 +65,5 @@ ConfigMgr * ConfigMgr::GetInstance()
 void ConfigMgr::Init()
 {\n''')
 for i in range(len(class_names)):
-    mgr_file.write('\t%s.Load();\n' % (class_names[i]))
+    mgr_file.write('\t%s = [%sConfigTable configs];\n' % (class_names[i], class_names[i]))
 mgr_file.write('}')

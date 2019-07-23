@@ -56,22 +56,22 @@
 }
 
 @end
-
-@implementation MsgMsgConfigTable
-
-+ (NSDictionary*)configs
-{
-	NSMutableDictionary* configs = [NSMutableDictionary dictionary];
-	NSString* fileString = [NSString stringWithContentsOfFile:@"Config/Msg_Msg.txt" encoding:NSUTF8StringEncoding error:nil];
-	NSArray* lines = [fileString componentsSeparatedByString:@"\r\n"];
-
-	for (int i = 3; i < lines.count; ++i) {
-		NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
-		MsgMsgConfig* config = [MsgMsgConfig ConfigProcess:line];
-		[configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
-	}
-
-	return configs;
-}
-
-@end
+
+@implementation MsgMsgConfigTable
+
++ (NSDictionary*)configs
+{
+    NSMutableDictionary* configs = [NSMutableDictionary dictionary];
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"Config/Msg_Msg.txt" ofType:nil];
+    NSString* fileString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSArray* lines = [fileString componentsSeparatedByString:@"\r\n"];
+    for (int i = 3; i < lines.count; ++i) 
+    {
+        NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
+        MsgMsgConfig* config = [MsgMsgConfig ConfigProcess:line];
+        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+    }
+    return configs;
+}
+
+@end

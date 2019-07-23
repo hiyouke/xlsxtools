@@ -16,7 +16,7 @@ public:
     void Init();
 
 public:
-	ItemItemConfigTable ItemItem;
-	MsgErrcodeConfigTable MsgErrcode;
-	MsgMsgConfigTable MsgMsg;
+	NSDictionary *  ItemItem;
+	NSDictionary *  MsgErrcode;
+	NSDictionary *  MsgMsg;
 };

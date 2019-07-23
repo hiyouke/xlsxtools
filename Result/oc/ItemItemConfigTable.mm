@@ -27,26 +27,31 @@
 	int index = 0;
 	ItemItemConfig* newInstance = [[ItemItemConfig alloc] init];
 
-	newInstance.m_id = [rows[index++] intValue];
-	newInstance.m_name = rows[index++];
-	newInstance.m_desc = rows[index++];
-	newInstance.m_gain = rows[index++];
-	newInstance.m_type = [rows[index++] intValue];
-	newInstance.m_overlap = [rows[index++] intValue];
-	newInstance.m_usetype = [rows[index++] intValue];
-	for (int i = 0; i < 2; ++i) {
-		newInstance.m_usevalue[i] = [rows[index++] intValue];
-	}
-	newInstance.m_use_times = [rows[index++] intValue];
-	newInstance.m_cansell = [rows[index++] intValue];
-	for (int i = 0; i < 2; ++i) {
-		newInstance.m_sells[i] = [ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]];
-		index += 2;
-	}
-	newInstance.m_head = rows[index++];
-	newInstance.m_model = rows[index++];
-	newInstance.m_star = [rows[index++] intValue];
-	newInstance.m_linkid = [rows[index++] intValue];
+	newInstance.m_id = [rows[index++] intValue];
+	newInstance.m_name = rows[index++];
+	newInstance.m_desc = rows[index++];
+	newInstance.m_gain = rows[index++];
+	newInstance.m_type = [rows[index++] intValue];
+	newInstance.m_overlap = [rows[index++] intValue];
+	newInstance.m_usetype = [rows[index++] intValue];
+
+    for (int i = 0; i < 2; ++i) 
+    {
+        newInstance.m_usevalue.push_back([rows[index++] intValue]);
+    }
+	newInstance.m_use_times = [rows[index++] intValue];
+	newInstance.m_cansell = [rows[index++] intValue];
+
+    for (int i = 0; i < 2; ++i) 
+    {
+        newInstance.m_sells.push_back(ItemItemSellConfig());
+        newInstance.m_sells[i] = [ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]];
+        index += 2;
+    }
+	newInstance.m_head = rows[index++];
+	newInstance.m_model = rows[index++];
+	newInstance.m_star = [rows[index++] intValue];
+	newInstance.m_linkid = [rows[index++] intValue];
 
 	return newInstance;
 }
@@ -67,29 +72,29 @@
 	int index = 0;
 	ItemItemSellConfig* newInstance = [[ItemItemSellConfig alloc] init];
 
-	newInstance.m_num = [rows[index++] intValue];
-	newInstance.m_id = [rows[index++] intValue];
+	newInstance.m_num = [rows[index++] intValue];
+	newInstance.m_id = [rows[index++] intValue];
 
 	return newInstance;
 }
 
 @end
-
-@implementation ItemItemConfigTable
-
-+ (NSDictionary*)configs
-{
-	NSMutableDictionary* configs = [NSMutableDictionary dictionary];
-	NSString* fileString = [NSString stringWithContentsOfFile:@"Config/Item_Item.txt" encoding:NSUTF8StringEncoding error:nil];
-	NSArray* lines = [fileString componentsSeparatedByString:@"\r\n"];
-
-	for (int i = 3; i < lines.count; ++i) {
-		NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
-		ItemItemConfig* config = [ItemItemConfig ConfigProcess:line];
-		[configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
-	}
-
-	return configs;
-}
-
-@end
+
+@implementation ItemItemConfigTable
+
++ (NSDictionary*)configs
+{
+    NSMutableDictionary* configs = [NSMutableDictionary dictionary];
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"Config/Item_Item.txt" ofType:nil];
+    NSString* fileString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSArray* lines = [fileString componentsSeparatedByString:@"\r\n"];
+    for (int i = 3; i < lines.count; ++i) 
+    {
+        NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
+        ItemItemConfig* config = [ItemItemConfig ConfigProcess:line];
+        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+    }
+    return configs;
+}
+
+@end

@@ -23,22 +23,22 @@
 }
 
 @end
-
-@implementation MsgErrcodeConfigTable
-
-+ (NSDictionary*)configs
-{
-	NSMutableDictionary* configs = [NSMutableDictionary dictionary];
-	NSString* fileString = [NSString stringWithContentsOfFile:@"Config/Msg_Errcode.txt" encoding:NSUTF8StringEncoding error:nil];
-	NSArray* lines = [fileString componentsSeparatedByString:@"\r\n"];
-
-	for (int i = 3; i < lines.count; ++i) {
-		NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
-		MsgErrcodeConfig* config = [MsgErrcodeConfig ConfigProcess:line];
-		[configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
-	}
-
-	return configs;
-}
-
-@end
+
+@implementation MsgErrcodeConfigTable
+
++ (NSDictionary*)configs
+{
+    NSMutableDictionary* configs = [NSMutableDictionary dictionary];
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"Config/Msg_Errcode.txt" ofType:nil];
+    NSString* fileString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSArray* lines = [fileString componentsSeparatedByString:@"\r\n"];
+    for (int i = 3; i < lines.count; ++i) 
+    {
+        NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
+        MsgErrcodeConfig* config = [MsgErrcodeConfig ConfigProcess:line];
+        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+    }
+    return configs;
+}
+
+@end

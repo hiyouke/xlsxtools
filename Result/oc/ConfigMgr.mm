@@ -25,7 +25,7 @@ ConfigMgr * ConfigMgr::GetInstance()
 
 void ConfigMgr::Init()
 {
-	ItemItem.Load();
-	MsgErrcode.Load();
-	MsgMsg.Load();
+	ItemItem = [ItemItemConfigTable configs];
+	MsgErrcode = [MsgErrcodeConfigTable configs];
+	MsgMsg = [MsgMsgConfigTable configs];
 }

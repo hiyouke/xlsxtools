@@ -6,23 +6,37 @@ import sys
 import os
 from openpyxl import load_workbook
 
-
-# 类结构体
+# 类成员
 class MemberDesc:
-    def __init__(self, name = "", type = "", desc = "", count = 1, isobj = False):
+    def __init__(self, name="", type="", desc="", count=1, isobj = False):
         self.name = 'm_' + name # 变量名
         self.type = type # 变量类型
         self.desc = desc # 变量注释
         self.count = count # 为1时不是数组
         self.isobj = isobj # 是否oc对象
 
-
+# 类结构体
 class ClassDesc:
-    def __init__(self, name = ""):
-        self.name = name # 类名
+    def __init__(self, name=""):
+        # 类名
+        self.name = name
         self.members = []
         self.member_names = []
-        self.init_count = 0 # 构造这类要用到的字符串数
+        # 构造这类要用到的字符串数
+        self.init_count = 0
+
+
+def get_type_str(s_type):
+    str_ret = ''
+    if s_type == "int":
+        str_ret = '[rows[index++] intValue]'
+    elif s_type == "float":
+        str_ret = '[rows[index++] floatValue]'
+    elif s_type == "NSString":
+        str_ret = 'rows[index++]'
+    else:
+        print('unsupoprt type : ' + s_type)
+    return str_ret
 
 
 def makeClasses(excel_name, sheet_name, type_map, isobj_map, class_member_names, class_member_descs, class_member_types):
@@ -115,7 +129,7 @@ def writeHeader(result_path, class_list, excel_name, sheet_name):
     out_file.write(out_string)
 
 
-def writeMMSource(result_path, class_list, excel_name, sheet_name):
+def writeMMSource(result_path, class_list, normal_type_map, excel_name, sheet_name):
     out_path = result_path + "/" + excel_name + sheet_name + "ConfigTable.mm"
     out_file = open(out_path, "w")
     out_string = "#import \"" + excel_name + sheet_name + "ConfigTable.h\""+os.linesep+""
@@ -131,7 +145,7 @@ def writeMMSource(result_path, class_list, excel_name, sheet_name):
         out_string += "+(%s*)ConfigProcess:(NSArray*)rows"%curr_class.name
         out_string += os.linesep
         out_string += "{"+os.linesep+""
-        out_string += "\tif (rows.count != %d) {"%curr_class.init_count
+        out_string += "\tif (rows.count != %d) {" % curr_class.init_count
         out_string += (os.linesep+"\t\treturn nil;"+os.linesep+"\t}"+os.linesep+""+os.linesep)
         out_string += "\tint index = 0;"+os.linesep+""
         out_string += "\t%s* newInstance = [[%s alloc] init];" % (curr_class.name, curr_class.name)
@@ -140,43 +154,52 @@ def writeMMSource(result_path, class_list, excel_name, sheet_name):
             class_member = curr_class.members[j]
             tab_mark = ""
             index_mark = ""
+
+            # print("class_member name : %s class_member count  : %d" % (class_member.name, class_member.count))
+
             if class_member.count > 1:
-                out_string += "\tfor (int i = 0; i < %d; ++i) {"%class_member.count
-                out_string += os.linesep
-                tab_mark = "\t"
-                index_mark = "[i]"
-            if class_member.type == "int":
-                out_string += "\t%snewInstance.%s%s = [rows[index++] intValue];"%(tab_mark, class_member.name, index_mark)
-                out_string += os.linesep
-            elif class_member.type == "float":
-                out_string += "\t%snewInstance.%s%s = [rows[index++] floatValue];"+os.linesep+""%(tab_mark, class_member.name, index_mark)
-            elif class_member.type == "NSString":
-                out_string += "\t%snewInstance.%s%s = rows[index++];"%(tab_mark, class_member.name, index_mark)
-                out_string += os.linesep
+                if class_member.type in normal_type_map:
+                    out_string += '''
+    for (int i = 0; i < %d; ++i) 
+    {
+        newInstance.%s.push_back(%s);
+    }\n''' % (class_member.count, class_member.name, get_type_str(class_member.type))
+                else:
+                    member_class = findClassWithName(class_list, class_member.type)
+                    print("member_class : " + member_class.name)
+                    out_string += '''
+    for (int i = 0; i < %d; ++i) 
+    {
+        newInstance.%s.push_back(%s());
+        newInstance.%s[i] = [%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]];
+        index += %d;
+    }\n''' % (class_member.count, class_member.name, member_class.name,class_member.name, member_class.name, member_class.init_count, member_class.init_count)
             else:
-                member_class = findClassWithName(class_list, class_member.type)
-                out_string += "\t%snewInstance.%s%s = [%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]];"%(tab_mark, 
-                    class_member.name, index_mark, class_member.type, member_class.init_count)
-                out_string += os.linesep
-                out_string += "\t%sindex += %d;"%(tab_mark, member_class.init_count)
-                out_string += os.linesep
-            if class_member.count > 1:
-                out_string += "\t}"+os.linesep+""
+                out_string += "\tnewInstance.%s = %s;\n" % (class_member.name, get_type_str(class_member.type))
         out_string += ""+os.linesep+"\treturn newInstance;"+os.linesep+"}"+os.linesep+""
         out_string += ""+os.linesep+"@end"+os.linesep+""
 
     # table定义
-    out_string += ""+os.linesep+"@implementation " + classNameWithTableName(excel_name, sheet_name) + "Table"+os.linesep+""+os.linesep+""
-    out_string += "+ (NSDictionary*)configs"+os.linesep+"{"+os.linesep+""
-    out_string += "\tNSMutableDictionary* configs = [NSMutableDictionary dictionary];"+os.linesep+""
-    out_string += "\tNSString* fileString = [NSString stringWithContentsOfFile:@\"Config/%s_%s.txt\" encoding:NSUTF8StringEncoding error:nil];"%(excel_name, sheet_name)
-    out_string += os.linesep
-    out_string += "\tNSArray* lines = [fileString componentsSeparatedByString:@\"\\r\\n\"];"+os.linesep+""+os.linesep+""
-    out_string += "\tfor (int i = 3; i < lines.count; ++i) {"+os.linesep+""
-    out_string += "\t\tNSArray* line = [lines[i] componentsSeparatedByString:@\"#\"];"+os.linesep+""
-    out_string += "\t\t" + excel_name + sheet_name + "Config* config = [" + excel_name + sheet_name + "Config ConfigProcess:line];"+os.linesep+""
-    out_string += "\t\t[configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];"+os.linesep+""
-    out_string += "\t}"+os.linesep+""+os.linesep+"\treturn configs;"+os.linesep+"}"+os.linesep+""+os.linesep+"@end"+os.linesep+""
+    out_string += '''
+@implementation %sTable
+
++ (NSDictionary*)configs
+{
+    NSMutableDictionary* configs = [NSMutableDictionary dictionary];
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"Config/%s_%s.txt" ofType:nil];
+    NSString* fileString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSArray* lines = [fileString componentsSeparatedByString:@"\\r\\n"];
+    for (int i = 3; i < lines.count; ++i) 
+    {
+        NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
+        %s%sConfig* config = [%s%sConfig ConfigProcess:line];
+        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+    }
+    return configs;
+}
+
+@end
+''' % (classNameWithTableName(excel_name, sheet_name), excel_name, sheet_name, excel_name, sheet_name, excel_name, sheet_name)
     out_file.write(out_string)
 
 
@@ -197,7 +220,7 @@ def main():
     name_split = path_split[len(path_split) - 1].split(".")
     excel_name = name_split[0].capitalize()
 
-    type_map = {"int": "int", "float": "float", "string": "NSString"}
+    normal_type_map = {"int": "int", "float": "float", "string": "NSString"}
     isobj_map = {"int": False, "float": False, "string": True}
 
     result_path = "./Result/oc/"
@@ -251,9 +274,9 @@ def main():
 
         # ====================================================================
         # 构造类结构体
-        find_classes = makeClasses(excel_name, sheet_name, type_map, isobj_map, class_member_names, class_member_descs, class_member_types)
+        find_classes = makeClasses(excel_name, sheet_name, normal_type_map, isobj_map, class_member_names, class_member_descs, class_member_types)
         writeHeader(result_path, find_classes, excel_name, sheet_name)
-        writeMMSource(result_path, find_classes, excel_name, sheet_name)
+        writeMMSource(result_path, find_classes, normal_type_map, excel_name, sheet_name)
 
 
 main()
