@@ -163,11 +163,11 @@ def writeMMSource(result_path, class_list, normal_type_map, excel_name, sheet_na
     vector<%s> %s_vector;
     for (int i = 0; i < %d; i++) 
     {
-        %s_vector.%s.push_back(%s);
+        %s_vector.push_back(%s);
     }
     newInstance.%s = %s_vector;
     \n''' % (class_member.type, class_member.name, class_member.count, class_member.name,
-             class_member.name, get_type_str(class_member.type), class_member.name, class_member.name)
+             get_type_str(class_member.type), class_member.name, class_member.name)
                 else:
                     member_class = findClassWithName(class_list, class_member.type)
                     out_string += '''

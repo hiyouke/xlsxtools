@@ -38,7 +38,7 @@
     vector<int> m_usevalue_vector;
     for (int i = 0; i < 2; i++) 
     {
-        m_usevalue_vector.m_usevalue.push_back([rows[index++] intValue]);
+        m_usevalue_vector.push_back([rows[index++] intValue]);
     }
     newInstance.m_usevalue = m_usevalue_vector;
     

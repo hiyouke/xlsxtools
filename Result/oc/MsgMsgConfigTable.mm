@@ -34,7 +34,7 @@
     vector<int> m_instance_vector;
     for (int i = 0; i < 4; i++) 
     {
-        m_instance_vector.m_instance.push_back([rows[index++] intValue]);
+        m_instance_vector.push_back([rows[index++] intValue]);
     }
     newInstance.m_instance = m_instance_vector;
     
