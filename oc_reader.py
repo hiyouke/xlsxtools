@@ -160,18 +160,27 @@ def writeMMSource(result_path, class_list, normal_type_map, excel_name, sheet_na
             if class_member.count > 1:
                 if class_member.type in normal_type_map:
                     out_string += '''
-    for (int i = 0; i < %d; ++i) 
+    vector<%s> %s_vector;
+    for (int i = 0; i < %d; i++) 
     {
-        newInstance.%s.push_back(%s);
-    }\n''' % (class_member.count, class_member.name, get_type_str(class_member.type))
+        tmp_%s_vector.%s.push_back(%s);
+    }
+    newInstance.%s = %s_vector;
+    \n''' % (class_member.type, class_member.name, class_member.count, class_member.name,
+             class_member.name, get_type_str(class_member.type), class_member.name, class_member.name)
                 else:
                     member_class = findClassWithName(class_list, class_member.type)
                     out_string += '''
-    for (int i = 0; i < %d; ++i) 
+    vector<%s *> %s_vector;
+    for (int i = 0; i < %d; i++) 
     {
-        newInstance.%s.push_back([%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]]);
+        tmp_%s_vector.push_back([%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]]);
         index += %d;
-    }\n''' % (class_member.count, class_member.name, member_class.name, member_class.init_count, member_class.init_count)
+    }
+    newInstance.%s = %s_vector
+    \n''' % (member_class.name, class_member.name, class_member.count, class_member.name,
+             member_class.name, member_class.init_count, member_class.init_count,
+             class_member.name, class_member.name)
             else:
                 out_string += "\tnewInstance.%s = %s;\n" % (class_member.name, get_type_str(class_member.type))
         out_string += ""+os.linesep+"\treturn newInstance;"+os.linesep+"}"+os.linesep+""
@@ -190,8 +199,11 @@ def writeMMSource(result_path, class_list, normal_type_map, excel_name, sheet_na
     for (int i = 3; i < lines.count; ++i) 
     {
         NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
-        %s%sConfig* config = [%s%sConfig ConfigProcess:line];
-        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        if([line count] > 1)
+        {
+            %s%sConfig* config = [%s%sConfig ConfigProcess:line];
+            [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        }
     }
     return configs;
 }

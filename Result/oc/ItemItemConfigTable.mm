@@ -35,18 +35,24 @@
 	newInstance.m_overlap = [rows[index++] intValue];
 	newInstance.m_usetype = [rows[index++] intValue];
 
-    for (int i = 0; i < 2; ++i) 
+    vector<int> m_usevalue_vector;
+    for (int i = 0; i < 2; i++) 
     {
-        newInstance.m_usevalue.push_back([rows[index++] intValue]);
+        tmp_m_usevalue_vector.m_usevalue.push_back([rows[index++] intValue]);
     }
+    newInstance.m_usevalue = m_usevalue_vector;
+    
 	newInstance.m_use_times = [rows[index++] intValue];
 	newInstance.m_cansell = [rows[index++] intValue];
 
-    for (int i = 0; i < 2; ++i) 
+    vector<ItemItemSellConfig *> m_sells_vector;
+    for (int i = 0; i < 2; i++) 
     {
-        newInstance.m_sells.push_back([ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
+        tmp_m_sells_vector.push_back([ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
         index += 2;
     }
+    newInstance.m_sells = m_sells_vector
+    
 	newInstance.m_head = rows[index++];
 	newInstance.m_model = rows[index++];
 	newInstance.m_star = [rows[index++] intValue];
@@ -90,8 +96,11 @@
     for (int i = 3; i < lines.count; ++i) 
     {
         NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
-        ItemItemConfig* config = [ItemItemConfig ConfigProcess:line];
-        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        if([line count] > 1)
+        {
+            ItemItemConfig* config = [ItemItemConfig ConfigProcess:line];
+            [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        }
     }
     return configs;
 }

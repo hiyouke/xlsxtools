@@ -22,16 +22,22 @@
 	newInstance.m_title = rows[index++];
 	newInstance.m_content = rows[index++];
 
-    for (int i = 0; i < 3; ++i) 
+    vector<MsgMsgSellConfig *> m_sells_vector;
+    for (int i = 0; i < 3; i++) 
     {
-        newInstance.m_sells.push_back([MsgMsgSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
+        tmp_m_sells_vector.push_back([MsgMsgSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
         index += 2;
     }
+    newInstance.m_sells = m_sells_vector
+    
 
-    for (int i = 0; i < 4; ++i) 
+    vector<int> m_instance_vector;
+    for (int i = 0; i < 4; i++) 
     {
-        newInstance.m_instance.push_back([rows[index++] intValue]);
+        tmp_m_instance_vector.m_instance.push_back([rows[index++] intValue]);
     }
+    newInstance.m_instance = m_instance_vector;
+    
 	newInstance.m_remark = rows[index++];
 
 	return newInstance;
@@ -72,8 +78,11 @@
     for (int i = 3; i < lines.count; ++i) 
     {
         NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
-        MsgMsgConfig* config = [MsgMsgConfig ConfigProcess:line];
-        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        if([line count] > 1)
+        {
+            MsgMsgConfig* config = [MsgMsgConfig ConfigProcess:line];
+            [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        }
     }
     return configs;
 }

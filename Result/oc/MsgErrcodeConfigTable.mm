@@ -35,8 +35,11 @@
     for (int i = 3; i < lines.count; ++i) 
     {
         NSArray* line = [lines[i] componentsSeparatedByString:@"#"];
-        MsgErrcodeConfig* config = [MsgErrcodeConfig ConfigProcess:line];
-        [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        if([line count] > 1)
+        {
+            MsgErrcodeConfig* config = [MsgErrcodeConfig ConfigProcess:line];
+            [configs setObject:config forKey:[NSNumber numberWithInt:config.m_id]];
+        }
     }
     return configs;
 }
