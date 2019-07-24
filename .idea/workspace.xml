@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="696fd4f2-bcf2-4c2b-b834-b4cfa32ce4da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Item_Item.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Item_Item.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/cpp/ItemItemConfigTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Result/cpp/ItemItemConfigTable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/cpp/ItemItemConfigTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Result/cpp/ItemItemConfigTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/cs/ItemItemConfigTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Result/cs/ItemItemConfigTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/java/com/xlsxtools/ItemItemConfigTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Result/java/com/xlsxtools/ItemItemConfigTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/oc/ItemItemConfigTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Result/oc/ItemItemConfigTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/oc/ItemItemConfigTable.mm" beforeDir="false" afterPath="$PROJECT_DIR$/Result/oc/ItemItemConfigTable.mm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/oc/MsgErrcodeConfigTable.mm" beforeDir="false" afterPath="$PROJECT_DIR$/Result/oc/MsgErrcodeConfigTable.mm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/oc/MsgMsgConfigTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Result/oc/MsgMsgConfigTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result/oc/MsgMsgConfigTable.mm" beforeDir="false" afterPath="$PROJECT_DIR$/Result/oc/MsgMsgConfigTable.mm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oc_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xlsx/item.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/xlsx/item.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/oc_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="77" column="56" lean-forward="true" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
+            <state relative-caret-position="540">
+              <caret line="179" column="31" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
               <folding>
                 <element signature="e#34#46#0" expanded="true" />
               </folding>
@@ -355,8 +343,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/oc_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="77" column="56" lean-forward="true" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
+        <state relative-caret-position="540">
+          <caret line="179" column="31" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
           <folding>
             <element signature="e#34#46#0" expanded="true" />
           </folding>

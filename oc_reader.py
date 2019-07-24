@@ -163,7 +163,7 @@ def writeMMSource(result_path, class_list, normal_type_map, excel_name, sheet_na
     vector<%s> %s_vector;
     for (int i = 0; i < %d; i++) 
     {
-        tmp_%s_vector.%s.push_back(%s);
+        %s_vector.%s.push_back(%s);
     }
     newInstance.%s = %s_vector;
     \n''' % (class_member.type, class_member.name, class_member.count, class_member.name,
@@ -174,10 +174,10 @@ def writeMMSource(result_path, class_list, normal_type_map, excel_name, sheet_na
     vector<%s *> %s_vector;
     for (int i = 0; i < %d; i++) 
     {
-        tmp_%s_vector.push_back([%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]]);
+        %s_vector.push_back([%s ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, %d)]]);
         index += %d;
     }
-    newInstance.%s = %s_vector
+    newInstance.%s = %s_vector;
     \n''' % (member_class.name, class_member.name, class_member.count, class_member.name,
              member_class.name, member_class.init_count, member_class.init_count,
              class_member.name, class_member.name)

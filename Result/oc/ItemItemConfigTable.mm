@@ -38,7 +38,7 @@
     vector<int> m_usevalue_vector;
     for (int i = 0; i < 2; i++) 
     {
-        tmp_m_usevalue_vector.m_usevalue.push_back([rows[index++] intValue]);
+        m_usevalue_vector.m_usevalue.push_back([rows[index++] intValue]);
     }
     newInstance.m_usevalue = m_usevalue_vector;
     
@@ -48,10 +48,10 @@
     vector<ItemItemSellConfig *> m_sells_vector;
     for (int i = 0; i < 2; i++) 
     {
-        tmp_m_sells_vector.push_back([ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
+        m_sells_vector.push_back([ItemItemSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
         index += 2;
     }
-    newInstance.m_sells = m_sells_vector
+    newInstance.m_sells = m_sells_vector;
     
 	newInstance.m_head = rows[index++];
 	newInstance.m_model = rows[index++];

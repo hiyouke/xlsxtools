@@ -25,16 +25,16 @@
     vector<MsgMsgSellConfig *> m_sells_vector;
     for (int i = 0; i < 3; i++) 
     {
-        tmp_m_sells_vector.push_back([MsgMsgSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
+        m_sells_vector.push_back([MsgMsgSellConfig ConfigProcess:[rows subarrayWithRange:NSMakeRange(index, 2)]]);
         index += 2;
     }
-    newInstance.m_sells = m_sells_vector
+    newInstance.m_sells = m_sells_vector;
     
 
     vector<int> m_instance_vector;
     for (int i = 0; i < 4; i++) 
     {
-        tmp_m_instance_vector.m_instance.push_back([rows[index++] intValue]);
+        m_instance_vector.m_instance.push_back([rows[index++] intValue]);
     }
     newInstance.m_instance = m_instance_vector;
     
